@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="tr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Nesne Secimi Ornegi</title>
+</head>
+<body onload="sayfaYuklendi()">
+    <h2>Nesne Secimi Ornegi</h2>
+    <h4>Asagidaki Textbox'a yazdiginiz mesajiniz gonder butonuna tiklandiginda label'a aktarilicaktir.</h4>
+
+    <input type="text" id="txtMesaj" /> <br /> <br />
+    <input type="button" value="GONDER" id="btnGonder"
+           onclick="mesajGonder()" /> <br /><br />
+
+    <label id="lblMesaj"></label>
+    <span id="spanText"></span>
+
+    <script>
+        function sayfaYuklendi() {
+            alert("Hosgeldiniz")
+            console.log("Sayfa Yuklendi")
+            document.getElementById("spanText").style.visibility = "hidden";
+
+
+        }
+
+        function mesajGonder() {
+            console.log('butona tiklandi')
+            var mesaj = document.getElementById('txtMesaj').value;
+            if (mesaj.length > 0) {
+                document.getElementById('lblMesaj').innerText = mesaj;
+                document.getElementById('spanText').style.visibility = "visible";
+                document.getElementById('spanText').innerText = mesaj
+                document.getElementById('txtMesaj').value = ""
+
+            } else {
+                alert("Goderilecek bir mesaj yazmadiniz!")
+            }
+        }
+
+    </script>
+
+</body>
+</html>
