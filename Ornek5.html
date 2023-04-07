@@ -128,8 +128,12 @@
                 KullanicilariGetir();
             }); // btn ekle bitti
 
-            $('btnTemilze').click(function () {
-
+            $('#btnTemizle').click(function () {
+                //txtler temizlensin
+                $("#txtAd").val('');
+                $("#txtSoyad").val('');
+                $("#txtEmail").val('');
+                $('#dogumtrh').val('');
             });
 
 
@@ -167,7 +171,7 @@
                 if (e.key == "Enter" && e.target.id != "txtAra" && e.target.id != "btnTemizle" &&
                     !sileTikladi
                     && e.target.defaultValue != "EKLE") {
-                    alert("enter çalştı")
+
                     $("#btnEkle").trigger("click");
                 }
             });
